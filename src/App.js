@@ -3,9 +3,9 @@ import React ,{ useState } from 'react';
 import './App.css'
 import Navbar from './components/Navbar'
 import TextForm from './components/TextForm';
-import About from './components/About';
+
 import Alert from './components/Alert';
-import { Outlet } from "react-router-dom";
+
 
 function App() {
   
