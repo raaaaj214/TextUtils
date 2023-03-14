@@ -73,7 +73,7 @@ function App() {
       <Navbar title = "TextUtils" firstValue='Home' secondValue='About' mode={Mode} toggle={toggleMode} modetype={showMode}/>
     <Alert alert ={alert}/>
      <div className="container my-3">
-     {/* <TextForm alert={showAlert} heading='Enter text to analyze' mode={Mode}/> */}
+     <TextForm alert={showAlert} heading='Enter text to analyze' mode={Mode}/>
      {/* <About/> */}
      <Outlet />
     </div>
