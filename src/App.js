@@ -74,7 +74,6 @@ function App() {
     <Alert alert ={alert}/>
      <div className="container my-3">
      <TextForm alert={showAlert} heading='Enter text to analyze' mode={Mode}/>
-     {/* <About/> */}
     </div>
     </>
   );

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
 
-  // const [isChecked,setIsChecked] = useState(false);
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode.backgroundColor} bg-${props.mode.backgroundColor} `}>
   <div className="container-fluid">
@@ -21,26 +21,6 @@ export default function Navbar(props) {
           <a className={`nav-link active text-${props.mode.color}`} href="/">{props.secondValue}</a>
         </li>
       </ul>
-      {/*
-      <Link to="new-path" state={{ some: "value" }} /> 
-      <div class="form-check mx-3"  >
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-        <label class="form-check-label" for="flexRadioDefault1">
-          Default
-        </label>
-      </div>
-      <div class="form-check mx-3" >
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
-        <label class="form-check-label" for="flexRadioDefault1">
-          Red
-        </label>
-      </div>
-      <div class="form-check mx-3" >
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-        <label class="form-check-label" for="flexRadioDefault1">
-          Blue
-        </label>
-      </div> */}
       <div className={`form-check form-switch text-${props.mode.backgroundColor === 'light' ? 'dark' : 'white'}`}>
         <input className="form-check-input" onClick={props.toggle} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>

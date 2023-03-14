@@ -4,37 +4,8 @@ export default function TextForm(props) {
     const [text,setText] = useState('');
     const [bold,setBold] = useState(false);
     const [italique,setItalique] = useState(false);
-    const[wordCount,setWordCount] = useState(0);
     
-
-    const showWordCount = (value) =>
-    {
-      if(!(/[a-z0-9]/i.test(value)))
-      {
-        console.log('blah');
-        setWordCount(0);
-      }
-      else if(value.length === 0)
-      {
-        console.log('hurahhhhhh');
-        setWordCount(0);
-      }
-      else
-      {
-        if(value.charAt(value.length-1) === ' ')
-        {
-          console.log('loveeeee');
-          let count = value.split(' ').length-1;
-          console.log('count '+ count)
-          setWordCount(count);
-          console.log(count)
-        }
-        else
-        {
-        setWordCount(value.split(' ').length);
-        }
-      }
-    }
+   
     const handleUpClick = () =>
     {
       if(text.length === 0 )
@@ -68,17 +39,13 @@ export default function TextForm(props) {
     const changeVal = (event) =>
     {
       
-      console.log(event.target);
       if(text !== event.target.value)
       {
         setBold(false);
         setItalique(false);
       }
       setText(event.target.value);
-      
 
-      let value = event.target.value;
-      showWordCount(value);
       
     }
 
@@ -119,7 +86,7 @@ export default function TextForm(props) {
       }
       
       navigator.clipboard.writeText(text);
-      console.log(text);
+      props.alert('Text Copied','success');
     }
   return (
     <>
@@ -135,7 +102,7 @@ export default function TextForm(props) {
     </div>
     <div className="container my-3">
       <h1>Text Summary</h1>
-      <h4>WORDS - {`${wordCount}`}</h4>
+      <h4>WORDS - {text.split(/\s+/).filter((element) => {return element.length !== 0}).length}</h4>
       <h4>CHARACTERS - {text.length}</h4>
       <h4>Estimated time to read - {0.008*(text.split(" ").length)} minute</h4>
       <h2 className='my-2'>Preview</h2>
